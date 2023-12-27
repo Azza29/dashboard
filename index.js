@@ -48,10 +48,14 @@ console.log('Modifier la ligne');
 
 // Fonction pour supprimer une ligne
 function supprimerLigne() {
-
-console.log('Supprimer la ligne');
+    var table = document.getElementById('presenceTableBody');
+    if (table.rows.length > 0) {
+        table.deleteRow(0);
+        console.log('Ligne supprimée avec succès');
+    } else {
+        console.log('Aucune ligne à supprimer');
+    }
 }
-
 
 
 
