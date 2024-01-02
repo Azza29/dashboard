@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histogram Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 80%; margin: auto;">
+        <canvas id="myHistogram" width="400" height="200"></canvas>
+    </div>
+    <script>// Données de l'histogramme   
+     var data = { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+     datasets: [{
+         label: 'Monthly presence',
+        data: [10, 15, 7, 20, 12],
+        backgroundColor: 'rgba(75, 192, 192, 0.5)', 
+      // Couleur de remplissage       
+       borderColor: 'rgba(75, 192, 192, 1)', // Couleur de la bordure    
+       borderWidth: 1
+     }]
+     };
+
+   // Options de l'histogramme   
+     var options = {
+         scales: {
+             y: {
+                 beginAtZero: true
+                 }
+                }
+         };
+    // Création de l'histogramme  
+    var ctx = document.getElementById('myHistogram').getContext('2d');
+     var myHistogram = new Chart(ctx, {
+        type: 'bar',
+         data: data,
+        options: options
+        });
+         </script> 
+    </body></html>
+    
+  
